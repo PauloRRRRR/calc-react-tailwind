@@ -1,24 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react'
+import Input from './components/Input'
+import Button from './components/Button'
+import './input.css'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
+      <div className='w-100 h-screen bg-slate-400 flex items-center justify-center'>      
+        <p className='w-80 min-h-[350px] bg-white'>
+          <Input/>
+          <Button />
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      </div>
   );
 }
 
