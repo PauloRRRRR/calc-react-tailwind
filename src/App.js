@@ -42,6 +42,30 @@ const App = () => {
     }
   }
 
+  const handleMultNumbers = () =>{
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+      setOperation('-')
+    }else{
+      const sum = Number(firstNumber)*Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+  }
+
+  const handleDivideNumbers = () =>{
+    if(firstNumber === '0'){
+      setFirstNumber(String(currentNumber));
+      setCurrentNumber('0');
+      setOperation('-')
+    }else{
+      const sum = Number(firstNumber)/Number(currentNumber);
+      setCurrentNumber(String(sum))
+      setOperation('')
+    }
+  }
+
   const handleEquals = () => {
     if(firstNumber !== '0' && operation !== '' && currentNumber !== '0'){
       switch(operation){
@@ -63,9 +87,9 @@ const App = () => {
           <Input value={currentNumber} />
           <div className='flex flex-row content-between items-center'>
             <Button label='x' onClick={() => handleAddNumber('x')} />
-            <Button label='/' onClick={() => handleAddNumber('/')} />
+            <Button label='/' onClick={handleDivideNumbers} />
             <Button label='C' onClick={() => handleOnClear()} />
-            <Button label='*' onClick={() => handleAddNumber('X')} />
+            <Button label='*' onClick={handleMultNumbers} />
           </div>
           <div className='flex flex-row content-between items-center'>
             <Button label='7' onClick={() => handleAddNumber('7')} />
